@@ -25,7 +25,6 @@ namespace CardCreator.Model
         public string[] AllTypes { get; set; }
         public BitmapImage Image { get; set; }
         public string ImageSource { get; set; }
-
         public int MinAtk { get; set; }
         public int MaxAtk { get; set; }
         public int MaxDef { get; set; }
@@ -39,7 +38,7 @@ namespace CardCreator.Model
         {
             using (var context = new CCContext())
             {
-                var types = context.Types.GroupBy(t => t.Id);
+                var types = context.Types.GroupBy(t => t.TypeId);
                 string[] typeArray = new string[types.Count()];
                 int i = 0;
 
@@ -52,32 +51,6 @@ namespace CardCreator.Model
                     }
                 }
                 return typeArray;
-            }
-        }
-
-        public void updateCombobox()
-        {
-            AllTypes = LoadTypesToCombobox();
-        }
-
-        public void createCard(string name, int attack, int defence, int cost, Type type, string imgSource)
-        {
-            using (var context = new CCContext())
-            {
-                var cards = new Card()
-                {
-                    Name = name,
-                    Attack = attack,
-                    Defence = defence,
-                    Cost = cost,
-                    Type = type,
-                    Image = imgSource
-                };
-                context.Cards.Add(cards);
-
-                context.SaveChanges();
-                Console.WriteLine("Added to database");
-
             }
         }
     }

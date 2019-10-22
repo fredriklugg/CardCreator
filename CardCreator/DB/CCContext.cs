@@ -20,18 +20,19 @@ namespace CardCreator
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Card>()
-                .HasOne<Type>(s => s.Type)
-                .WithMany(g => g.Card);
+                .HasOne<Type>(t => t.Type)
+                .WithMany(c => c.Card);
         }
     }
 
     public class Card
     {
-        public int Id { get; set; }
+        public int CardId { get; set; }
         public string Name { get; set; }
         public int Attack { get; set; }
         public int Defence { get; set; }
         public int Cost { get; set; }
+        public int TypeId { get; set; }
         public Type Type { get; set; }
         public string Image { get; set; }
 
@@ -39,7 +40,7 @@ namespace CardCreator
 
     public class Type
     {
-        public int Id { get; set; }
+        public int TypeId { get; set; }
         public string Name { get; set; }
         public int Max_Attack { get; set; }
         public int Min_Attack { get; set; }

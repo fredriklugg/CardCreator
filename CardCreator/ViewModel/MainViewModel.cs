@@ -3,12 +3,14 @@ using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
 using Microsoft.Win32;
 using System;
+using System.Collections.Immutable;
 using System.Linq;
 using System.Windows.Annotations;
 using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media.Imaging;
 using CardCreator.View;
+using Microsoft.EntityFrameworkCore;
 
 namespace CardCreator.ViewModel
 {
@@ -128,7 +130,30 @@ namespace CardCreator.ViewModel
 
         private void ClickSaveMethod()
         {
-            Console.WriteLine(ImageSource);
+            
+            //Console.WriteLine(ImageSource);
+            using (var context = new CCContext())
+            {
+                var type = context.Types.First(t => t.Name == SelectedType);
+
+                int typeId = type.TypeId;
+
+                var cards = new Card
+                    {
+                        Name = Name,
+                        Attack = Attack,
+                        Defence = Defence,
+                        Cost = Cost,
+                        TypeId = type.TypeId,
+                        Image = ImageSource
+                    };
+                    context.Cards.Add(cards);
+
+                    context.SaveChanges();
+                    Console.WriteLine("Added to database");
+
+            }
+            
             ClearFields();
             RaisePropertyChanged("");
         }
@@ -204,6 +229,11 @@ namespace CardCreator.ViewModel
                 RaisePropertyChanged("");
 
             }
+        }
+
+        public void UpdateMainWindow()
+        {
+            RaisePropertyChanged("");
         }
     }
 }

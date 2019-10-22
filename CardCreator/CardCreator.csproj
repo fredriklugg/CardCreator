@@ -171,6 +171,10 @@
     <Compile Include="DB\Migrations\20191021174902_addedCost.designer.cs">
       <DependentUpon>20191021174902_addedCost.cs</DependentUpon>
     </Compile>
+    <Compile Include="DB\Migrations\20191022200017_updateRelation.cs" />
+    <Compile Include="DB\Migrations\20191022200017_updateRelation.designer.cs">
+      <DependentUpon>20191022200017_updateRelation.cs</DependentUpon>
+    </Compile>
     <Compile Include="DB\Migrations\CCContextModelSnapshot.cs" />
     <Compile Include="Model\TypeData.cs" />
     <Compile Include="Model\CardData.cs" />
