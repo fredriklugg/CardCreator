@@ -29,7 +29,6 @@ namespace CardCreator.ViewModel
             set => Model.AllTypes = value;
         }
         public String SelectedType { get; set; }
-
         public int Attack
         {
             get => Model.Attack;
@@ -82,10 +81,10 @@ namespace CardCreator.ViewModel
 
         private void ClickSaveMethod()
         {
-            //var context = new CCContext();
-            //var type= context.Types.Find(1);
-            //Model.createCard("Drogon", 5,5,4, context.Types.Find(1), "aaaa");
             Console.WriteLine(ImageSource);
+            updateTypeMinMax();
+            ClearFields();
+            RaisePropertyChanged("");
         }
 
         private bool CanExecuteSaveButton()
@@ -112,6 +111,32 @@ namespace CardCreator.ViewModel
         private bool CanExecuteUploadButton()
         {
             return true;
+        }
+
+        private void ClearFields()
+        {
+            Name = "";
+            Attack = 0;
+            Defence = 0;
+            Cost = 0;
+            SelectedType = null;
+            Image = null;
+            ImageSource = "";
+        }
+        private void updateTypeMinMax()
+        {
+            using (var context = new CCContext())
+            {
+                var maxAtk = (from t in context.Types
+                    where t.Name == SelectedType
+                    select t.Max_Attack);
+                var minAtk = (from t in context.Types
+                    where t.Name == SelectedType
+                    select t.Min_Attack);
+
+                Console.WriteLine(""+ maxAtk + " and " + minAtk);
+
+            }
         }
     }
 }

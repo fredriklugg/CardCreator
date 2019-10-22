@@ -27,12 +27,12 @@
         <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="552,118,0,0" Height="28" Width="78" FontSize="18"><Run Text="Attack"/><Run Text=":"/></TextBlock>
         <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="552,198,0,0" Height="28" Width="78" FontSize="18"><Run Text="Defence"/><Run Text=":"/></TextBlock>
         <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Cost:" VerticalAlignment="Top" Margin="551,274,0,0" Height="28" Width="78" FontSize="18"/>
-        <TextBox HorizontalAlignment="Left" Height="27" Margin="552,167,0,0" TextWrapping="Wrap" Text="{Binding AttackMin}" VerticalAlignment="Top" Width="48" FontSize="18" TextAlignment="Center"/>
-        <TextBox HorizontalAlignment="Left" Height="27" Margin="552,249,0,0" TextWrapping="Wrap" Text="{Binding DefenceMin}" VerticalAlignment="Top" Width="48" FontSize="18" TextAlignment="Center"/>
-        <TextBox HorizontalAlignment="Left" Height="27" Margin="552,323,0,0" TextWrapping="Wrap" Text="{Binding CostMin}" VerticalAlignment="Top" Width="48" FontSize="18" TextAlignment="Center"/>
-        <TextBox HorizontalAlignment="Left" Height="27" Margin="612,167,0,0" TextWrapping="Wrap" Text="{Binding AttackMax}" VerticalAlignment="Top" Width="48" FontSize="18" TextAlignment="Center"/>
-        <TextBox HorizontalAlignment="Left" Height="27" Margin="612,249,0,0" TextWrapping="Wrap" Text="{Binding DefenceMax}" VerticalAlignment="Top" Width="48" FontSize="18" TextAlignment="Center"/>
-        <TextBox HorizontalAlignment="Left" Height="27" Margin="612,323,0,0" TextWrapping="Wrap" Text="{Binding CostMax}" VerticalAlignment="Top" Width="48" FontSize="18" TextAlignment="Center"/>
+        <TextBox HorizontalAlignment="Left" Height="27" Margin="552,167,0,0" TextWrapping="Wrap" Text="{Binding MinAtk}" VerticalAlignment="Top" Width="48" FontSize="18" TextAlignment="Center"/>
+        <TextBox HorizontalAlignment="Left" Height="27" Margin="552,249,0,0" TextWrapping="Wrap" Text="{Binding MinDef}" VerticalAlignment="Top" Width="48" FontSize="18" TextAlignment="Center"/>
+        <TextBox HorizontalAlignment="Left" Height="27" Margin="552,323,0,0" TextWrapping="Wrap" Text="{Binding MinCost}" VerticalAlignment="Top" Width="48" FontSize="18" TextAlignment="Center"/>
+        <TextBox HorizontalAlignment="Left" Height="27" Margin="612,167,0,0" TextWrapping="Wrap" Text="{Binding MaxAtk}" VerticalAlignment="Top" Width="48" FontSize="18" TextAlignment="Center"/>
+        <TextBox HorizontalAlignment="Left" Height="27" Margin="612,249,0,0" TextWrapping="Wrap" Text="{Binding MaxDef}" VerticalAlignment="Top" Width="48" FontSize="18" TextAlignment="Center"/>
+        <TextBox HorizontalAlignment="Left" Height="27" Margin="612,323,0,0" TextWrapping="Wrap" Text="{Binding MaxCost}" VerticalAlignment="Top" Width="48" FontSize="18" TextAlignment="Center"/>
         <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="552,139,0,0" Height="28" Width="108" FontSize="18"><Run Text="min"/><Run Text="   "/><Run Text="-"/><Run Text="  "/><Run Text=" ma"/><Run Text="x"/></TextBlock>
         <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="552,223,0,0" Height="28" Width="108" FontSize="18"><Run Text="min"/><Run Text="   "/><Run Text="-"/><Run Text="  "/><Run Text=" ma"/><Run Text="x"/></TextBlock>
         <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="552,295,0,0" Height="28" Width="108" FontSize="18"><Run Text="min"/><Run Text="   "/><Run Text="-"/><Run Text="  "/><Run Text=" ma"/><Run Text="x"/></TextBlock>

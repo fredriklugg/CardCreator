@@ -26,12 +26,20 @@ namespace CardCreator.Model
         public BitmapImage Image { get; set; }
         public string ImageSource { get; set; }
 
+        public int MinAtk { get; set; }
+        public int MaxAtk { get; set; }
+        public int MaxDef { get; set; }
+        public int MinDef { get; set; }
+        public int MinCost { get; set; }
+        public int MaxCost { get; set; }
+
+
 
         public string[] LoadTypesToCombobox()
         {
             using (var context = new CCContext())
             {
-                var types = context.Types.GroupBy(s => s.Id);
+                var types = context.Types.GroupBy(t => t.Id);
                 string[] typeArray = new string[types.Count()];
                 int i = 0;
 
