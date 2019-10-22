@@ -17,6 +17,7 @@ namespace CardCreator.Model
             MaxDefence = 0;
             MinCost = 0;
             MaxCost = 0;
+            //hei github
         }
 
         public string Name { get; set; }
