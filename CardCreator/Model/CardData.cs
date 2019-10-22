@@ -14,7 +14,7 @@ namespace CardCreator.Model
             Defence = 0;
             Cost = 0;
             Name = "";
-            AllTypes = GetTypesToCombobox();
+            AllTypes = LoadTypesToCombobox();
 
         }
 
@@ -27,8 +27,7 @@ namespace CardCreator.Model
         public string ImageSource { get; set; }
 
 
-
-        public string[] GetTypesToCombobox()
+        public string[] LoadTypesToCombobox()
         {
             using (var context = new CCContext())
             {
@@ -46,6 +45,11 @@ namespace CardCreator.Model
                 }
                 return typeArray;
             }
+        }
+
+        public void updateCombobox()
+        {
+            AllTypes = LoadTypesToCombobox();
         }
 
         public void createCard(string name, int attack, int defence, int cost, Type type, string imgSource)

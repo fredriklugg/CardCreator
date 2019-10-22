@@ -11,7 +11,7 @@
         <Rectangle Fill="#d3d3d3" HorizontalAlignment="Left" Height="275" Margin="540,90,0,0" Stroke="Black" VerticalAlignment="Top" Width="203"/>
         <Button Content="Save" HorizontalAlignment="Left" Margin="291,384,0,0" VerticalAlignment="Top" Width="154" Height="26" FontSize="16" Command="{Binding ClickSave}"/>
         <TextBox HorizontalAlignment="Left" Height="28" Margin="234,52,0,0" TextWrapping="Wrap" Text="{Binding Name}" VerticalAlignment="Top" Width="280" FontSize="18"/>
-        <ComboBox HorizontalAlignment="Left" Margin="540,52,0,0" VerticalAlignment="Top" Width="203" Height="28" Text="Type" ItemsSource="{Binding AllTypes}" SelectedItem="{Binding SelectedType}"/>
+        <ComboBox Name="TypeList" HorizontalAlignment="Left" Margin="540,52,0,0" VerticalAlignment="Top" Width="203" Height="28" Text="Type" ItemsSource="{Binding AllTypes}" SelectedItem="{Binding SelectedType}"/>
         <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Name:" VerticalAlignment="Top" Margin="234,19,0,0" Height="28" Width="78" FontSize="18"/>
         <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Stats:" VerticalAlignment="Top" Margin="37,90,0,0" Height="28" Width="78" FontSize="18"/>
         <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="37,126,0,0" Height="28" Width="78" FontSize="18"><Run Text="Attack"/><Run Text=":"/></TextBlock>

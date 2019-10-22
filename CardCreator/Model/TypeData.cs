@@ -17,7 +17,6 @@ namespace CardCreator.Model
             MaxDefence = 0;
             MinCost = 0;
             MaxCost = 0;
-            //hei github
         }
 
         public string Name { get; set; }
@@ -27,8 +26,6 @@ namespace CardCreator.Model
         public int MaxDefence { get; set; }
         public int MinCost { get; set; }
         public int MaxCost { get; set; }
-
-
 
         public void createType(string name, int minAtk, int maxAtk, int minDef, int maxDef, int minCost, int maxCost)
         {

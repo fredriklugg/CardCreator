@@ -1,5 +1,7 @@
 using System;
+using System.ComponentModel;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Input;
 using CardCreator.Model;
 using GalaSoft.MvvmLight;
@@ -56,6 +58,7 @@ namespace CardCreator.ViewModel
         public TypeViewModel()
         {
             typeData  = new TypeData();
+            
             ClickSave = new RelayCommand(ClickSaveMethod, CanExecuteSaveButton);
             ClickCancel = new RelayCommand(ClickCancelMethod, CanExecuteCancelButton);
         }
@@ -77,7 +80,23 @@ namespace CardCreator.ViewModel
 
         private void ClickSaveMethod()
         {
-            typeData.createType("Orc", 2,6,3,7,2,8);
+            typeData.createType(Name, MinAttack,MaxAttack,MinDefence,MaxDefence,MinCost,MaxCost);
+
+            ClearFields();
+
+        }
+
+        private void ClearFields()
+        {
+            Name = "";
+            MinAttack = 0;
+            MaxAttack = 0;
+            MinDefence = 0;
+            MaxDefence = 0;
+            MinCost = 0;
+            MaxCost = 0;
+
+            RaisePropertyChanged("");
         }
     }
 }

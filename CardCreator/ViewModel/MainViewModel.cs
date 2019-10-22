@@ -65,7 +65,6 @@ namespace CardCreator.ViewModel
         {
             Model = new CardData();
             ClickSave = new RelayCommand(ClickSaveMethod, CanExecuteSaveButton);
-            ClickCancel = new RelayCommand(ClickCancelMethod, CanExecuteCancelButton);
             ClickUploadImg = new RelayCommand(ClickUploadMethod, CanExecuteUploadButton);
             OpenNewTypeWindow = new RelayCommand(ClickOpenTypeMethod, CanExecuteOpenTypeButton);
 
@@ -86,6 +85,7 @@ namespace CardCreator.ViewModel
             //var context = new CCContext();
             //var type= context.Types.Find(1);
             //Model.createCard("Drogon", 5,5,4, context.Types.Find(1), "aaaa");
+            Console.WriteLine(ImageSource);
         }
 
         private bool CanExecuteSaveButton()
@@ -93,15 +93,6 @@ namespace CardCreator.ViewModel
             return true;
         }
 
-        private void ClickCancelMethod()
-        {
-            Console.WriteLine("Close Window");
-        }
-
-        private bool CanExecuteCancelButton()
-        {
-            return false;
-        }
 
         private void ClickUploadMethod()
         {
