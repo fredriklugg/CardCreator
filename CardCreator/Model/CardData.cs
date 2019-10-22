@@ -32,7 +32,7 @@ namespace CardCreator.Model
         public int MinDef { get; set; }
         public int MinCost { get; set; }
         public int MaxCost { get; set; }
-
+        public string TypeName { get; set; }
 
 
         public string[] LoadTypesToCombobox()

@@ -5,6 +5,7 @@ using Microsoft.Win32;
 using System;
 using System.Linq;
 using System.Windows.Annotations;
+using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media.Imaging;
 using CardCreator.View;
@@ -14,9 +15,10 @@ namespace CardCreator.ViewModel
     public class MainViewModel : ViewModelBase
     {
         public ICommand ClickSave { get; private set; }
-        public ICommand ClickCancel { get; private set; }
         public ICommand ClickUploadImg { get; private set; }
         public ICommand OpenNewTypeWindow { get; private set; }
+
+        private CardData Model;
 
         public String Name
         {
@@ -28,7 +30,6 @@ namespace CardCreator.ViewModel
             get => Model.AllTypes;
             set => Model.AllTypes = value;
         }
-        public String SelectedType { get; set; }
         public int Attack
         {
             get => Model.Attack;
@@ -58,7 +59,53 @@ namespace CardCreator.ViewModel
             set => Model.ImageSource = value;
         }
 
-        private CardData Model;
+        public int MinAtk
+        {
+            get => Model.MinAtk;
+            set => Model.MinAtk = value;
+        }
+        public int MaxAtk
+        {
+            get => Model.MaxAtk;
+            set => Model.MaxAtk = value;
+        }
+        public int MinDef
+        {
+            get => Model.MinDef;
+            set => Model.MinDef = value;
+        }
+        public int MaxDef
+        {
+            get => Model.MaxDef;
+            set => Model.MaxDef = value;
+        }
+        public int MinCost
+        {
+            get => Model.MinCost;
+            set => Model.MinCost = value;
+        }
+        public int MaxCost
+        {
+            get => Model.MaxCost;
+            set => Model.MaxCost = value;
+        }
+        public string TypeName
+        {
+            get => Model.TypeName;
+            set => Model.TypeName = value;
+        }
+
+         private string _SelectedType;
+         public string SelectedType
+        {
+            get { return _SelectedType; }
+            set
+            {
+                _SelectedType = value;
+                UpdateTypeMinMax();
+            }
+        }
+
 
         public MainViewModel()
         {
@@ -82,7 +129,6 @@ namespace CardCreator.ViewModel
         private void ClickSaveMethod()
         {
             Console.WriteLine(ImageSource);
-            updateTypeMinMax();
             ClearFields();
             RaisePropertyChanged("");
         }
@@ -112,6 +158,10 @@ namespace CardCreator.ViewModel
         {
             return true;
         }
+        private void TypeListChange()
+        {
+            UpdateTypeMinMax();
+        }
 
         private void ClearFields()
         {
@@ -123,18 +173,35 @@ namespace CardCreator.ViewModel
             Image = null;
             ImageSource = "";
         }
-        private void updateTypeMinMax()
+        private void UpdateTypeMinMax()
         {
             using (var context = new CCContext())
             {
-                var maxAtk = (from t in context.Types
-                    where t.Name == SelectedType
-                    select t.Max_Attack);
-                var minAtk = (from t in context.Types
-                    where t.Name == SelectedType
-                    select t.Min_Attack);
+                var attributes = context.Types.Where(t => t.Name == SelectedType)
+                    .Select(t => new
+                    {
+                        MaxAtk = t.Max_Attack,
+                        MinAtk = t.Min_Attack,
+                        MaxDef = t.Max_Defence,
+                        MinDef = t.Min_Defence,
+                        MaxCost = t.Max_Cost,
+                        MinCost = t.Min_Cost
+                    }).FirstOrDefault();
 
-                Console.WriteLine(""+ maxAtk + " and " + minAtk);
+                if (attributes == null)
+                {
+                    return;
+                }
+
+                TypeName = SelectedType;
+                MinAtk = attributes.MinAtk;
+                MaxAtk = attributes.MaxAtk;
+                MinDef = attributes.MinDef;
+                MaxDef = attributes.MaxDef;
+                MinCost = attributes.MinCost;
+                MaxCost = attributes.MaxCost;
+
+                RaisePropertyChanged("");
 
             }
         }

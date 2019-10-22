@@ -23,7 +23,7 @@
         <Image HorizontalAlignment="Left" Height="260" Margin="234,90,0,0" VerticalAlignment="Top" Width="280" Source="{Binding Image}" Stretch="Uniform" Name="CardImg"/>
         <Button Content="Upload Image" HorizontalAlignment="Left" Margin="138,361,0,0" VerticalAlignment="Top" Width="134" Height="49" FontSize="16" Command="{Binding ClickUploadImg}"/>
         <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Type:" VerticalAlignment="Top" Margin="540,19,0,0" Height="28" Width="78" FontSize="18"/>
-        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="552,90,0,0" Height="28" Width="140" FontSize="18"><Run Text="Type"/><Run Text=" min/max:"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="552,90,0,0" Height="28" Width="48" FontSize="18"><Run Text="Type: "/></TextBlock>
         <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="552,118,0,0" Height="28" Width="78" FontSize="18"><Run Text="Attack"/><Run Text=":"/></TextBlock>
         <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="552,198,0,0" Height="28" Width="78" FontSize="18"><Run Text="Defence"/><Run Text=":"/></TextBlock>
         <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="Cost:" VerticalAlignment="Top" Margin="551,274,0,0" Height="28" Width="78" FontSize="18"/>
@@ -37,6 +37,7 @@
         <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="552,223,0,0" Height="28" Width="108" FontSize="18"><Run Text="min"/><Run Text="   "/><Run Text="-"/><Run Text="  "/><Run Text=" ma"/><Run Text="x"/></TextBlock>
         <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="552,295,0,0" Height="28" Width="108" FontSize="18"><Run Text="min"/><Run Text="   "/><Run Text="-"/><Run Text="  "/><Run Text=" ma"/><Run Text="x"/></TextBlock>
         <Button Content="Create Type" HorizontalAlignment="Left" Margin="650,384,0,0" VerticalAlignment="Top" Width="93" Height="28" FontSize="16" Command="{Binding OpenNewTypeWindow}"/>
+        <TextBlock HorizontalAlignment="Left" Height="28" Margin="600,90,0,0" TextWrapping="Wrap" Text="{Binding TypeName}" VerticalAlignment="Top" Width="115" FontSize="18"/>
 
     </Grid>
 </Window>
