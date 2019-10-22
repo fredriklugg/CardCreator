@@ -1,0 +1,146 @@
+{
+  "format": 1,
+  "restore": {
+    "C:\\Users\\Fredrik\\Desktop\\Skole\\3.År\\Semester 1\\Tools Prog\\Kode\\CardCreator\\CardCreator.Data\\CardCreator.Data.csproj": {}
+  },
+  "projects": {
+    "C:\\Users\\Fredrik\\Desktop\\Skole\\3.År\\Semester 1\\Tools Prog\\Kode\\CardCreator\\CardCreator.Data\\CardCreator.Data.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Fredrik\\Desktop\\Skole\\3.År\\Semester 1\\Tools Prog\\Kode\\CardCreator\\CardCreator.Data\\CardCreator.Data.csproj",
+        "projectName": "CardCreator.Data",
+        "projectPath": "C:\\Users\\Fredrik\\Desktop\\Skole\\3.År\\Semester 1\\Tools Prog\\Kode\\CardCreator\\CardCreator.Data\\CardCreator.Data.csproj",
+        "packagesPath": "C:\\Users\\Fredrik\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Fredrik\\Desktop\\Skole\\3.År\\Semester 1\\Tools Prog\\Kode\\CardCreator\\CardCreator.Data\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Fredrik\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "projectReferences": {
+              "C:\\Users\\Fredrik\\Desktop\\Skole\\3.År\\Semester 1\\Tools Prog\\Kode\\CardCreator\\CardCreator.Domain\\CardCreator.Domain.csproj": {
+                "projectPath": "C:\\Users\\Fredrik\\Desktop\\Skole\\3.År\\Semester 1\\Tools Prog\\Kode\\CardCreator\\CardCreator.Domain\\CardCreator.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[2.2.6, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.6, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "NETStandard.Library": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\Fredrik\\Desktop\\Skole\\3.År\\Semester 1\\Tools Prog\\Kode\\CardCreator\\CardCreator.Domain\\CardCreator.Domain.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\Fredrik\\Desktop\\Skole\\3.År\\Semester 1\\Tools Prog\\Kode\\CardCreator\\CardCreator.Domain\\CardCreator.Domain.csproj",
+        "projectName": "CardCreator.Domain",
+        "projectPath": "C:\\Users\\Fredrik\\Desktop\\Skole\\3.År\\Semester 1\\Tools Prog\\Kode\\CardCreator\\CardCreator.Domain\\CardCreator.Domain.csproj",
+        "packagesPath": "C:\\Users\\Fredrik\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Fredrik\\Desktop\\Skole\\3.År\\Semester 1\\Tools Prog\\Kode\\CardCreator\\CardCreator.Domain\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Fredrik\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netstandard2.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netstandard2.1": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netstandard2.1": {
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[2.2.6, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.6, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "NETStandard.Library": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.0.100\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

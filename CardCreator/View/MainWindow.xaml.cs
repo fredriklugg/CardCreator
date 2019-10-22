@@ -1,6 +1,6 @@
 ﻿using System.Windows;
 
-namespace Lecture4.View
+namespace CardCreator.View
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -10,6 +10,12 @@ namespace Lecture4.View
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        public static void ShowTypeWindow()
+        {
+            var typeWin = new TypeCreator();
+            typeWin.Show();
         }
     }
 }

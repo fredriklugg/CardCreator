@@ -1,7 +1,7 @@
 /*
   In App.xaml:
   <Application.Resources>
-      <vm:ViewModelLocator xmlns:vm="clr-namespace:Lecture4"
+      <vm:ViewModelLocator xmlns:vm="clr-namespace:CardCreator"
                            x:Key="Locator" />
   </Application.Resources>
   
@@ -42,6 +42,9 @@ namespace CardCreator.ViewModel
             ////}
 
             SimpleIoc.Default.Register<MainViewModel>();
+            SimpleIoc.Default.Register<TypeViewModel>();
+
+
         }
 
         public MainViewModel Main
@@ -51,7 +54,13 @@ namespace CardCreator.ViewModel
                 return ServiceLocator.Current.GetInstance<MainViewModel>();
             }
         }
-
+        public TypeViewModel Type
+        {
+            get
+            {
+                return ServiceLocator.Current.GetInstance<TypeViewModel>();
+            }
+        }
         public static void Cleanup()
         {
             // TODO Clear the ViewModels

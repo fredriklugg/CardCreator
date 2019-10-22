@@ -1,12 +1,13 @@
+using CardCreator.Model;
 using GalaSoft.MvvmLight;
 using GalaSoft.MvvmLight.CommandWpf;
+using Microsoft.Win32;
 using System;
-using System.Reflection;
-using System.Windows;
+using System.Linq;
+using System.Windows.Annotations;
 using System.Windows.Input;
 using System.Windows.Media.Imaging;
-using CardCreator.Model;
-using Microsoft.Win32;
+using CardCreator.View;
 
 namespace CardCreator.ViewModel
 {
@@ -15,13 +16,15 @@ namespace CardCreator.ViewModel
         public ICommand ClickSave { get; private set; }
         public ICommand ClickCancel { get; private set; }
         public ICommand ClickUploadImg { get; private set; }
+        public ICommand OpenNewTypeWindow { get; private set; }
 
         public String Name
         {
             get => Model.Name;
             set => Model.Name = value;
         }
-        public string[] AllTypes {
+        public string[] AllTypes
+        {
             get => Model.AllTypes;
             set => Model.AllTypes = value;
         }
@@ -49,35 +52,57 @@ namespace CardCreator.ViewModel
             get => Model.Image;
             set => Model.Image = value;
         }
-        
 
+        public string ImageSource
+        {
+            get => Model.ImageSource;
+            set => Model.ImageSource = value;
+        }
 
         private CardData Model;
+
         public MainViewModel()
         {
             Model = new CardData();
             ClickSave = new RelayCommand(ClickSaveMethod, CanExecuteSaveButton);
+            ClickCancel = new RelayCommand(ClickCancelMethod, CanExecuteCancelButton);
             ClickUploadImg = new RelayCommand(ClickUploadMethod, CanExecuteUploadButton);
+            OpenNewTypeWindow = new RelayCommand(ClickOpenTypeMethod, CanExecuteOpenTypeButton);
+
+        }
+
+        private bool CanExecuteOpenTypeButton()
+        {
+            return true;
+        }
+
+        private void ClickOpenTypeMethod()
+        {
+            MainWindow.ShowTypeWindow();
         }
 
         private void ClickSaveMethod()
         {
-            
+            //var context = new CCContext();
+            //var type= context.Types.Find(1);
+            //Model.createCard("Drogon", 5,5,4, context.Types.Find(1), "aaaa");
         }
 
         private bool CanExecuteSaveButton()
         {
             return true;
         }
+
         private void ClickCancelMethod()
         {
-
+            Console.WriteLine("Close Window");
         }
 
         private bool CanExecuteCancelButton()
         {
-            return true;
+            return false;
         }
+
         private void ClickUploadMethod()
         {
             OpenFileDialog op = new OpenFileDialog();
@@ -88,6 +113,7 @@ namespace CardCreator.ViewModel
             if (op.ShowDialog() == true)
             {
                 Image = new BitmapImage(new Uri(op.FileName));
+                ImageSource = op.FileName;
             }
             RaisePropertyChanged("Image");
         }

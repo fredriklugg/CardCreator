@@ -1,0 +1,8 @@
+C:\Users\Fredrik\Desktop\Skole\3.År\Semester 1\Tools Prog\Kode\CardCreator\CardCreator.Domain\bin\Debug\netstandard2.1\CardCreator.Domain.deps.json
+C:\Users\Fredrik\Desktop\Skole\3.År\Semester 1\Tools Prog\Kode\CardCreator\CardCreator.Domain\bin\Debug\netstandard2.1\CardCreator.Domain.dll
+C:\Users\Fredrik\Desktop\Skole\3.År\Semester 1\Tools Prog\Kode\CardCreator\CardCreator.Domain\obj\Debug\netstandard2.1\CardCreator.Domain.csprojAssemblyReference.cache
+C:\Users\Fredrik\Desktop\Skole\3.År\Semester 1\Tools Prog\Kode\CardCreator\CardCreator.Domain\obj\Debug\netstandard2.1\CardCreator.Domain.AssemblyInfoInputs.cache
+C:\Users\Fredrik\Desktop\Skole\3.År\Semester 1\Tools Prog\Kode\CardCreator\CardCreator.Domain\obj\Debug\netstandard2.1\CardCreator.Domain.AssemblyInfo.cs
+C:\Users\Fredrik\Desktop\Skole\3.År\Semester 1\Tools Prog\Kode\CardCreator\CardCreator.Domain\bin\Debug\netstandard2.1\CardCreator.Domain.pdb
+C:\Users\Fredrik\Desktop\Skole\3.År\Semester 1\Tools Prog\Kode\CardCreator\CardCreator.Domain\obj\Debug\netstandard2.1\CardCreator.Domain.dll
+C:\Users\Fredrik\Desktop\Skole\3.År\Semester 1\Tools Prog\Kode\CardCreator\CardCreator.Domain\obj\Debug\netstandard2.1\CardCreator.Domain.pdb
