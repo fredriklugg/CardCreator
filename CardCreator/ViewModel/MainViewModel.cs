@@ -22,7 +22,7 @@ namespace CardCreator.ViewModel
 
         private CardData Model;
 
-        public String Name
+        public string Name
         {
             get => Model.Name;
             set => Model.Name = value;
@@ -131,12 +131,9 @@ namespace CardCreator.ViewModel
         private void ClickSaveMethod()
         {
             
-            //Console.WriteLine(ImageSource);
             using (var context = new CCContext())
             {
                 var type = context.Types.First(t => t.Name == SelectedType);
-
-                int typeId = type.TypeId;
 
                 var cards = new Card
                     {
@@ -155,7 +152,6 @@ namespace CardCreator.ViewModel
             }
             
             ClearFields();
-            RaisePropertyChanged("");
         }
 
         private bool CanExecuteSaveButton()
@@ -197,6 +193,9 @@ namespace CardCreator.ViewModel
             SelectedType = null;
             Image = null;
             ImageSource = "";
+
+            RaisePropertyChanged("");
+
         }
         private void UpdateTypeMinMax()
         {

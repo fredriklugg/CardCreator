@@ -16,7 +16,7 @@ namespace CardCreator.ViewModel
 
         private TypeData typeData;
 
-        public String Name
+        public string Name
         {
             get => typeData.Name;
             set => typeData.Name = value;
