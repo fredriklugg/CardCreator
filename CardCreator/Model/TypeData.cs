@@ -42,10 +42,8 @@ namespace CardCreator.Model
                     Max_Cost = maxCost,
                 };
                 context.Types.Add(type);
-
                 context.SaveChanges();
                 Console.WriteLine("Added type to database");
-
             }
         }
     }

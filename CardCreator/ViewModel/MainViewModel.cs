@@ -130,27 +130,7 @@ namespace CardCreator.ViewModel
 
         private void ClickSaveMethod()
         {
-            
-            using (var context = new CCContext())
-            {
-                var type = context.Types.First(t => t.Name == SelectedType);
-
-                var cards = new Card
-                    {
-                        Name = Name,
-                        Attack = Attack,
-                        Defence = Defence,
-                        Cost = Cost,
-                        TypeId = type.TypeId,
-                        Image = ImageSource
-                    };
-                    context.Cards.Add(cards);
-
-                    context.SaveChanges();
-                    Console.WriteLine("Added to database");
-
-            }
-            
+            Model.createNewCard(Name, Attack, Defence, Cost, ImageSource, SelectedType);
             ClearFields();
         }
 
@@ -179,11 +159,6 @@ namespace CardCreator.ViewModel
         {
             return true;
         }
-        private void TypeListChange()
-        {
-            UpdateTypeMinMax();
-        }
-
         private void ClearFields()
         {
             Name = "";
@@ -226,13 +201,7 @@ namespace CardCreator.ViewModel
                 MaxCost = attributes.MaxCost;
 
                 RaisePropertyChanged("");
-
             }
-        }
-
-        public void UpdateMainWindow()
-        {
-            RaisePropertyChanged("");
         }
     }
 }

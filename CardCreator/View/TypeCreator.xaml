@@ -24,8 +24,7 @@
         <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="82,131,0,0" Height="28" Width="108" FontSize="18"><Run Text="min"/><Run Text="   "/><Run Text="-"/><Run Text="  "/><Run Text=" ma"/><Run Text="x"/></TextBlock>
         <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="82,215,0,0" Height="28" Width="108" FontSize="18"><Run Text="min"/><Run Text="   "/><Run Text="-"/><Run Text="  "/><Run Text=" ma"/><Run Text="x"/></TextBlock>
         <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Margin="82,287,0,0" Height="28" Width="108" FontSize="18"><Run Text="min"/><Run Text="   "/><Run Text="-"/><Run Text="  "/><Run Text=" ma"/><Run Text="x"/></TextBlock>
-        <Button Content="Save" HorizontalAlignment="Left" Margin="20,371,0,0" VerticalAlignment="Top" Width="134" Height="28" FontSize="16" Command="{Binding ClickSave}"/>
-        <Button Content="Cancel" HorizontalAlignment="Left" Margin="171,371,0,0" VerticalAlignment="Top" Width="134" Height="28" FontSize="16" Command="{Binding ClickCancel}"/>
+        <Button Content="Save" HorizontalAlignment="Left" Margin="168,372,0,0" VerticalAlignment="Top" Width="134" Height="28" FontSize="16" Command="{Binding ClickSave}"/>
 
     </Grid>
 </Window>
