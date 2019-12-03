@@ -10,7 +10,9 @@ using System.Windows.Controls;
 using System.Windows.Input;
 using System.Windows.Media.Imaging;
 using CardCreator.View;
+using LevelEditor;
 using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
 
 namespace CardCreator.ViewModel
 {
@@ -19,6 +21,8 @@ namespace CardCreator.ViewModel
         public ICommand ClickSave { get; private set; }
         public ICommand ClickUploadImg { get; private set; }
         public ICommand OpenNewTypeWindow { get; private set; }
+        public ICommand ClickLoad { get; set; }
+
 
         private CardData Model;
 
@@ -113,9 +117,29 @@ namespace CardCreator.ViewModel
         {
             Model = new CardData();
             ClickSave = new RelayCommand(ClickSaveMethod, CanExecuteSaveButton);
+            ClickLoad = new RelayCommand(ClickLoadMethod, CanExecuteLoadButton);
             ClickUploadImg = new RelayCommand(ClickUploadMethod, CanExecuteUploadButton);
             OpenNewTypeWindow = new RelayCommand(ClickOpenTypeMethod, CanExecuteOpenTypeButton);
 
+        }
+
+        private void ClickLoadMethod()
+        {
+            var json = new JsonHandler();
+            CardData card = json.DeserializeCard();
+
+            Name = card.Name;
+            Attack = card.Attack;
+            Defence = card.Defence;
+            Cost = card.Cost;
+            TypeName = card.TypeName;
+            RaisePropertyChanged("");
+
+        }
+
+        private bool CanExecuteLoadButton()
+        {
+            return true;
         }
 
         private bool CanExecuteOpenTypeButton()
@@ -128,9 +152,12 @@ namespace CardCreator.ViewModel
             MainWindow.ShowTypeWindow();
         }
 
-        private void ClickSaveMethod()
+        public void ClickSaveMethod()
         {
             Model.createNewCard(Name, Attack, Defence, Cost, ImageSource, SelectedType);
+            CardData card = new CardData(Attack, Defence, Cost, Name, SelectedType);
+            var json = new JsonHandler();
+            json.SerializeCard(card);
             ClearFields();
         }
 

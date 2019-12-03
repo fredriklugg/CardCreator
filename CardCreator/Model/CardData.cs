@@ -6,7 +6,7 @@ using System.Linq;
 
 namespace CardCreator.Model
 {
-    class CardData
+    public class CardData
     {
         public CardData()
         {
@@ -16,6 +16,15 @@ namespace CardCreator.Model
             Name = "";
             AllTypes = LoadTypesToCombobox();
 
+        }
+
+        public CardData(int atk, int def, int cost, string name, string type)
+        {
+            Attack = atk;
+            Defence = def;
+            Cost = cost;
+            Name = name;
+            TypeName = type;
         }
 
         public string Name { get; set; }

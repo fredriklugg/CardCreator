@@ -78,3 +78,5 @@ C:\Users\Fredrik\Desktop\Skole\3.År\Semester 1\Tools Prog\Kode\CardCreator\Card
 C:\Users\Fredrik\Desktop\Skole\3.År\Semester 1\Tools Prog\Kode\CardCreator\CardCreator\bin\Debug\System.Memory.xml
 C:\Users\Fredrik\Desktop\Skole\3.År\Semester 1\Tools Prog\Kode\CardCreator\CardCreator\bin\Debug\System.Numerics.Vectors.xml
 C:\Users\Fredrik\Desktop\Skole\3.År\Semester 1\Tools Prog\Kode\CardCreator\CardCreator\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\Fredrik\Desktop\Skole\3.År\Semester 1\Tools Prog\Kode\CardCreator\CardCreator\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Fredrik\Desktop\Skole\3.År\Semester 1\Tools Prog\Kode\CardCreator\CardCreator\bin\Debug\Newtonsoft.Json.xml
